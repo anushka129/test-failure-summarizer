@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.example.orders.OrderServiceTest" tests="6" failures="2" errors="1" skipped="1">
+  <testcase classname="com.example.orders.OrderServiceTest" name="createsOrderForValidCart" time="0.12"/>
+  <testcase classname="com.example.orders.OrderServiceTest" name="appliesDiscountCode" time="0.05"/>
+  <testcase classname="com.example.orders.OrderServiceTest" name="calculatesTotalWithTax" time="0.03">
+    <failure message="expected: &lt;108.0&gt; but was: &lt;100.0&gt;" type="org.opentest4j.AssertionFailedError">org.opentest4j.AssertionFailedError: expected: &lt;108.0&gt; but was: &lt;100.0&gt;
+	at com.example.orders.OrderServiceTest.calculatesTotalWithTax(OrderServiceTest.java:58)</failure>
+  </testcase>
+  <testcase classname="com.example.orders.OrderServiceTest" name="sendsConfirmationEmail" time="0.02">
+    <failure message="Cannot invoke &quot;EmailClient.send(String)&quot; because &quot;this.emailClient&quot; is null" type="java.lang.NullPointerException">java.lang.NullPointerException: Cannot invoke "EmailClient.send(String)" because "this.emailClient" is null
+	at com.example.orders.OrderService.confirm(OrderService.java:91)
+	at com.example.orders.OrderServiceTest.sendsConfirmationEmail(OrderServiceTest.java:77)</failure>
+  </testcase>
+  <testcase classname="com.example.orders.OrderServiceTest" name="fetchesInventoryFromWarehouse" time="30.01">
+    <error message="Read timed out" type="java.net.SocketTimeoutException">java.net.SocketTimeoutException: Read timed out
+	at com.example.inventory.InventoryClient.fetch(InventoryClient.java:44)</error>
+  </testcase>
+  <testcase classname="com.example.orders.OrderServiceTest" name="legacyBulkImport" time="0.00">
+    <skipped/>
+  </testcase>
+</testsuite>
